@@ -264,7 +264,7 @@ extension ZLImageEditorWrapper where Base: UIImage {
         return ciImage
     }
     
-    func clipImage(angle: CGFloat, editRect: CGRect, isCircle: Bool) -> UIImage? {
+    public func clipImage(angle: CGFloat, editRect: CGRect, isCircle: Bool) -> UIImage? {
         let a = ((Int(angle) % 360) - 360) % 360
         var newImage: UIImage = base
         if a == -90 {
