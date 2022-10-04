@@ -92,44 +92,44 @@ open class ZLClipImageViewController: UIViewController {
     
     lazy var rotateBtn = ZLEnlargeButton(type: .custom)
     
-    var clipRatioColView: UICollectionView!
+    public var clipRatioColView: UICollectionView!
     
-    var shouldLayout = true
+    public var shouldLayout = true
     
-    var panEdge: ZLClipImageViewController.ClipPanEdge = .none
+    public var panEdge: ZLClipImageViewController.ClipPanEdge = .none
     
-    var beginPanPoint: CGPoint = .zero
+    public var beginPanPoint: CGPoint = .zero
     
-    var clipBoxFrame: CGRect = .zero
+    public var clipBoxFrame: CGRect = .zero
     
-    var clipOriginFrame: CGRect = .zero
+    public var clipOriginFrame: CGRect = .zero
     
-    var isRotating = false
+    public var isRotating = false
     
-    var angle: CGFloat = 0
+    public var angle: CGFloat = 0
     
-    var selectedRatio: ZLImageClipRatio {
+    open var selectedRatio: ZLImageClipRatio {
         didSet {
             overlayView.isCircle = selectedRatio.isCircle
         }
     }
     
-    var thumbnailImage: UIImage?
+    public var thumbnailImage: UIImage?
     
-    lazy var maxClipFrame = calculateMaxClipFrame()
+    public lazy var maxClipFrame = calculateMaxClipFrame()
     
-    var minClipSize = CGSize(width: 45, height: 45)
+    public var minClipSize = CGSize(width: 45, height: 45)
     
-    var resetTimer: Timer?
+    public var resetTimer: Timer?
     
-    var dismissAnimateFromRect: CGRect = .zero
+    public var dismissAnimateFromRect: CGRect = .zero
     
-    var dismissAnimateImage: UIImage?
+    public var dismissAnimateImage: UIImage?
     
     // Angle, edit rect, clip ratio
-    var clipDoneBlock: ((CGFloat, CGRect, ZLImageClipRatio) -> Void)?
+    public var clipDoneBlock: ((CGFloat, CGRect, ZLImageClipRatio) -> Void)?
     
-    var cancelClipBlock: (() -> Void)?
+    public var cancelClipBlock: (() -> Void)?
     
     open override var prefersStatusBarHidden: Bool {
         return true
@@ -144,7 +144,7 @@ open class ZLClipImageViewController: UIViewController {
         self.cleanTimer()
     }
     
-    init(image: UIImage, editRect: CGRect?, angle: CGFloat = 0, selectRatio: ZLImageClipRatio?) {
+    public init(image: UIImage, editRect: CGRect?, angle: CGFloat = 0, selectRatio: ZLImageClipRatio?) {
         originalImage = image
         clipRatios = ZLImageEditorConfiguration.default().clipRatios
         self.editRect = editRect ?? .zero
@@ -172,7 +172,7 @@ open class ZLClipImageViewController: UIViewController {
     }
     
     @available(*, unavailable)
-    required public init?(coder: NSCoder) {
+    public required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
