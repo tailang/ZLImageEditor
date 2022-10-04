@@ -27,7 +27,7 @@
 import UIKit
 
 extension ZLClipImageViewController {
-    enum ClipPanEdge {
+    public enum ClipPanEdge {
         case none
         case top
         case bottom
